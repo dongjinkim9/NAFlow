@@ -1,0 +1,22 @@
+dataset:
+  target: datasets.sidd.SIDDGTLQdataset
+  params:
+    dataroot: sidd/trainset/SIDD_Medium_Srgb/Data # DATASET PATH
+    patch_size: 160
+    classes: [G4_00100, G4_00200, G4_00400, G4_00800, 
+              GP_00050, GP_00100, GP_00200, GP_00400, GP_00800, GP_01600, GP_03200, GP_06400, GP_10000, 
+              IP_00100, IP_00200, IP_00320, IP_00400, IP_00500, IP_00640, IP_00800, IP_01000, IP_01600, IP_02000, 
+              N6_00100, N6_00400, N6_00800, N6_01600, N6_03200, 
+              S6_00100, S6_00200, S6_00400, S6_00800, S6_01600, S6_03200]
+    balanced: True
+    preload: True # False # True # copy dataset into RAM
+    test: False
+
+data_loader:
+  batch_size: 8
+  shuffle: true
+  num_workers: 8
+  drop_last: true
+
+repeat_dataset:
+  times: 100

@@ -1,0 +1,23 @@
+data:
+  target: datasets.data_module.BaseDataModule
+  params:
+    # Path to training set configuration file.
+    train_config: configs/datasets/sidd_train.yaml
+    # Path to validation set configuration file.
+    val_config: configs/datasets/sidd_val.yaml
+
+model:
+  # You can set learning rate in the following configuration file.
+  config: configs/models/naflow.yaml
+  # Path to the checkpoints or weights you want to resume. At the begining, 
+  resume: pretrained_models/naflow_sidd.ckpt
+
+lightning:
+  seed: 0
+  mode: validate
+  
+  trainer:
+    accelerator: auto # gpu # ddp
+    precision: 32
+    # Indices of GPUs used for training.
+    devices: [0]

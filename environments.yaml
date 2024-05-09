@@ -1,0 +1,27 @@
+name: naflow
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - cudatoolkit=11.8
+  - pytorch=2.1.2
+  - torchvision=0.16.2
+  - pip:
+    - lightning==2.1.4
+    - scikit-image
+    - scipy
+    - einops 
+    - Pillow
+    - pandas
+    - opencv-python
+    - timm
+    - matplotlib
+    - wandb
+    - natsort
+    - tensorboard
+    - omegaconf
+    - rich

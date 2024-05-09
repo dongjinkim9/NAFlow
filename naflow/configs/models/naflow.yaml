@@ -1,0 +1,56 @@
+target: models.lit_naflow.LitNAFlow
+params:
+  optimizer_config:
+    target: torch.optim.Adam
+    params:
+      lr: !!float 1e-4
+      weight_decay: 0
+      betas: [0.9, 0.99]
+  
+  scheduler_config:
+    target: torch.optim.lr_scheduler.MultiStepLR
+    params:
+      milestones: [50000, 75000, 90000, 95000]
+      gamma: 0.5
+
+  network_G_config:
+    train_cond_net: true # false # true
+    scale: 8
+    in_nc: 3
+    out_nc: 3
+    nf: 128
+    add_cond_noise_std: !!float 3.0
+
+    classes: [G4_00100, G4_00200, G4_00400, G4_00800, 
+              GP_00050, GP_00100, GP_00200, GP_00400, GP_00800, GP_01600, GP_03200, GP_06400, GP_10000, 
+              IP_00100, IP_00200, IP_00320, IP_00400, IP_00500, IP_00640, IP_00800, IP_01000, IP_01600, IP_02000, 
+              N6_00100, N6_00400, N6_00800, N6_01600, N6_03200, 
+              S6_00100, S6_00200, S6_00400, S6_00800, S6_01600, S6_03200]
+
+    flow:
+      L: 3 
+      K: 1 
+      img_size: 160
+      LU_decomposed: true
+      coupling: CondFeaAndCondSelf
+      layer_type: ['C_C', 'C_C']
+      pre_injector_type: ~ 
+      additionalFlowNoAffine: 2 
+      hidden_channels: 64 
+      split:
+        enable: false
+        correct_splits: false
+      shift:
+        trainable_mean: true
+        trainable_var: true
+        std_type: diagonal # full, diagonal
+        std_init_shift: !!float 1.0
+      dequantization:
+        type: 'uniform' 
+        
+      CondFeaAndCondSelf:
+        in_channels_cond: 128
+        n_hidden_layers: 1
+        hidden_channels: 64
+        eps: 0.001
+        multReverse: True

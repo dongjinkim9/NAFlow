@@ -1,0 +1,15 @@
+dataset:
+  target: datasets.sidd.SIDDGTLQdataset
+  params:
+    dataroot: sidd/validation # DATASET PATH
+    patch_size: ~
+    classes: ~
+    balanced: True
+    preload: True # False # copy dataset into RAM
+    test: True
+
+data_loader:
+  batch_size: 1
+  shuffle: false
+  num_workers: 8
+  drop_last: false
