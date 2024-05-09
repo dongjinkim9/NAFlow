@@ -6,8 +6,8 @@ Dongjin Kim*, Donggoo Jung*, Sungyong Baik, Tae Hyun Kim
 
 | Camera / ISO    | Clean | Noisy | Sampled Noisy |
 | :---: | :---:         | :---:            | :---:            |
-| Samsung Galaxy S6 Edge / 03200 | ![](assets/video/0032-0023_clean.png) | ![](assets/video/0032-0023_noisy.png) | <video src="https://github.com/dongjinkim9/NAFlow/assets/48521269/962348d6-a0cf-47c1-a225-6117ffee4fef" /> |
-| Google Pixel / 06400 | ![](assets/video/0018-0017_clean.png) | ![](assets/video/0018-0017_noisy.png) | <video src="https://github.com/dongjinkim9/NAFlow/assets/48521269/0b30f3a1-40d2-4b49-b470-914ef489c1b2" /> |
+| Samsung Galaxy S6 Edge / 03200 | ![](assets/video/0032-0023_clean.png) | ![](assets/video/0032-0023_noisy.png) | <video src="https://github.com/dongjinkim9/NAFlow/assets/48521269/ce2c1ec3-cb52-40fa-8266-322768e171e4" /> |
+| Google Pixel / 06400 | ![](assets/video/0018-0017_clean.png) | ![](assets/video/0018-0017_noisy.png) | <video src="https://github.com/dongjinkim9/NAFlow/assets/48521269/edfbadad-ec24-4bd4-9b3c-7e00b221794e" /> |
 
 
 ## Table of Contents
